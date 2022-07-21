@@ -1,0 +1,50 @@
+{
+    "name": "BookshopCAP",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^5",
+        "express": "^4",
+        "passport": "^0.6.0"
+    },
+    "devDependencies": {
+        "@sap/ux-specification": "^1.102.1",
+        "sqlite3": "^5.0.2"
+    },
+    "scripts": {
+        "start": "cds run",
+        "watch-subituimodule": "cds watch --open subituimodule/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy BookshopCAP --delete-services --delete-service-keys"
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+            "es2020": true,
+            "node": true,
+            "jest": true,
+            "mocha": true
+        },
+        "globals": {
+            "SELECT": true,
+            "INSERT": true,
+            "UPDATE": true,
+            "DELETE": true,
+            "CREATE": true,
+            "DROP": true,
+            "CDL": true,
+            "CQL": true,
+            "CXL": true,
+            "cds": true
+        },
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
+        }
+    },
+    "sapux": [
+        "app/subituimodule"
+    ]
+}
